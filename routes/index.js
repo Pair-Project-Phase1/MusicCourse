@@ -9,12 +9,11 @@ router.get('/', Controller.home)
 router.get('/login', Controller.login)
 router.post('/login/process', Controller.loginProcess)
 
-/**Piano */
+/**Instrument*/
 router.get('/piano/rules', Controller.pianoRules)
-router.get('/gitar/rules', Controller.gitarRules)
+router.get('/guitar/rules', Controller.gitarRules)
 router.get('/drum/rules', Controller.drumRules)
 
-// router.get('/login', Controller.login)
 
 // router.get('/register', Controller.register)
 
