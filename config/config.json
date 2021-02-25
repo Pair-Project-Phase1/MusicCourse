@@ -7,12 +7,15 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "vtaaavnfeltgpk",
-    "password": "aa677184f467ad4eb1bc474d89ecdc82fdb6d722281902d6cbebc77ed9a3e46f",
-    "database": "dnmh1dkuik2nq",
-    "host": "ec2-3-223-72-172.compute-1.amazonaws.com",
+    "use_env_variable":"DATABASE_URL",
+    "ssl": true,
     "dialect": "postgres",
-    "port": 5432,
-    "ssl": true
+    "protocol": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
