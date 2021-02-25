@@ -1,16 +1,16 @@
 [
   {
-    "class" : "Guitar",
+    "tipe" : "Guitar",
     "limit" : 7,
     "description" : "3 times a week"
   },
   {
-    "class" : "Piano",
+    "tipe" : "Piano",
     "limit" : 5,
     "description" : "2 times a week"
   },
   {
-    "class" : "Drum",
+    "tipe" : "Drum",
     "limit" : 4,
     "description" : "2 times a week"
   }
