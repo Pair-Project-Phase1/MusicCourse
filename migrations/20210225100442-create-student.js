@@ -14,7 +14,7 @@ module.exports = {
       last_name: {
         type: Sequelize.STRING
       },
-      class: {
+      kelas: {
         type: Sequelize.STRING
       },
       gender: {

@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      class: {
+      tipe: {
         type: Sequelize.STRING
       },
       limit: {
