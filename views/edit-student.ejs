@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Students</title>
+</head>
+<body>
+  <h1>Edit Student</h1>
+
+  <form action="/admin/student/edit/<%= student.id %>" method="POST">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="<%= student.first_name %>"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="<%= student.last_name %>"><br><br>
+
+    <label for="kelas">Class:</label>
+    <select name="kelas" id="kelas">
+      <option value="10-IPA">10-IPA</option>
+      <option value="10-IPS">10-IPS</option>
+      <option value="11-IPA">11-IPA</option>
+      <option value="11-IPS">11-IPS</option>
+    </select><br><br>
+
+    <label for="tipe">Class Music:</label>
+    <select name="tipe" id="tipe">
+      <% instrument.forEach(el => {%>
+      <option value="<%= el.id %>"><%=el.tipe%></option>
+      <% }) %>
+    </select><br><br>
+
+    <label for="radio">Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="male" <%= student.gender === 'male' ? 'checked' : '' %> >
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female" <%= student.gender === 'female' ? 'checked' : '' %> >
+    <label for="female">Female</label><br><br>
+
+    <button type="submit">Update Student</button>
+  </form>
+</body>
+</html>

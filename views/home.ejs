@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<body>
+  <h1 style="font-size: 80px;">WELCOME TO HACTIV SCHOOL</h1>
+
+  <h3>Here is Our music class</h3>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Class Members</th>
+        <th>Limit</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% data.forEach(el => { %>
+      <tr>
+        <td><%= el.tipe %></td>
+        <td>2</td>
+        <td><%= el.limit %></td>
+        <td><%= el.description %></td>
+        <td>
+          <a href="#">Join</a>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>

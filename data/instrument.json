@@ -1,0 +1,17 @@
+[
+  {
+    "class" : "Guitar",
+    "limit" : 7,
+    "description" : "3 times a week"
+  },
+  {
+    "class" : "Piano",
+    "limit" : 5,
+    "description" : "2 times a week"
+  },
+  {
+    "class" : "Drum",
+    "limit" : 4,
+    "description" : "2 times a week"
+  }
+]
