@@ -7,6 +7,7 @@ router.get('/', Controller.home)
 
 /*Login*/
 router.get('/login', Controller.login)
+router.post('/login/process', Controller.loginProcess)
 
 /**Piano */
 router.get('/piano/rules', Controller.pianoRules)

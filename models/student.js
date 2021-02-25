@@ -15,7 +15,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Student.init({
-    first_name: DataTypes.STRING,
+    first_name: {
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : 'Your name cannot be empty!'
+        }
+      }
+    },
     last_name: DataTypes.STRING,
     kelas: DataTypes.STRING,
     gender: DataTypes.STRING
@@ -23,5 +30,8 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Student',
   });
+  Student.beforeCreate((data, options)=>{
+    data.last_name===""?data.last_name=data.first_name:""
+  })
   return Student;
 };

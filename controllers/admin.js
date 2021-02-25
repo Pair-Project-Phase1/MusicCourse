@@ -1,6 +1,6 @@
 
 const { Student, Instrument, MusicCourse }   = require('../models/index.js')
-
+const sendMail = require("../helpers/nodeMailer")
 
 class AdminController {
 
@@ -27,6 +27,7 @@ class AdminController {
       return Instrument.findAll()
     })
     .then(dataInstrument => {
+
       res.render('add-student', { dataStudent, dataInstrument })
     })
     .catch(err => res.send(err))
@@ -48,8 +49,8 @@ class AdminController {
       InstrumentId : +req.body.tipe,
       gender : req.body.gender
     }
-
-   
+    const {email} = req.body
+   sendMail(newStudent, email)
     Student
       .create(newStudent)
       .then(data => {

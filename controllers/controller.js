@@ -1,4 +1,4 @@
-const { Student, Instrument }   = require('../models/index.js')
+const { Student, Instrument, Admin }   = require('../models/index.js')
 
 class Controller {
 
@@ -14,7 +14,25 @@ class Controller {
   }
 
   static login = (req, res) => {
-    res.render('login')
+    res.render('login', {error: null})
+  }
+
+
+  static loginProcess = (req, res) => {
+    const {username, password} = req.body
+    Admin.findOne({
+      where:{username}
+    })
+    .then(data=>{
+      if(data.password === password){
+        res.redirect("/admin")
+      }else{
+        res.render("login", {error: "Password salah"})
+      }
+    })
+    .catch(error=>{
+      res.send(error)
+    })
   }
 
   static pianoRules = (req,res) => {
