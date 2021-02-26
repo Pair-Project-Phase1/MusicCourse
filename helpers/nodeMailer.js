@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 function sendEmail(dataStudent, email) {
-    //Step 1: Creating the transporter
+  //Step 1: Creating the transporter
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {

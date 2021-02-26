@@ -1,42 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Students</title>
-</head>
+<%- include('header-part') %>
+<%- include('navbarIsLogin') %>
+
+
 <body>
-  <h1>Edit Student</h1>
-
-  <form action="/admin/student/edit/<%= student.id %>" method="POST">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" value="<%= student.first_name %>"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" value="<%= student.last_name %>"><br><br>
-
-    <label for="kelas">Class:</label>
-    <select name="kelas" id="kelas">
-      <option value="10-IPA">10-IPA</option>
-      <option value="10-IPS">10-IPS</option>
-      <option value="11-IPA">11-IPA</option>
-      <option value="11-IPS">11-IPS</option>
-    </select><br><br>
-
-    <label for="tipe">Class Music:</label>
-    <select name="tipe" id="tipe">
-      <% instrument.forEach(el => {%>
-      <option value="<%= el.id %>"><%=el.tipe%></option>
-      <% }) %>
-    </select><br><br>
-
-    <label for="radio">Gender:</label><br>
-    <input type="radio" id="male" name="gender" value="male" <%= student.gender === 'male' ? 'checked' : '' %> >
-    <label for="male">Male</label><br>
-    <input type="radio" id="female" name="gender" value="female" <%= student.gender === 'female' ? 'checked' : '' %> >
-    <label for="female">Female</label><br><br>
-
-    <button type="submit">Update Student</button>
+  <div class="row" style="margin-top: 4%;">
+    <div class="col-sm"></div>
+    <div class="col-sm">
+      <h1>Edit Student</h1>
+      <form action="/admin/student/edit/<%= student.id %>" method="POST">
+        <label for="fname">First name:</label><br>
+        <input class="form-control" type="text" id="fname" name="fname" value="<%= student.first_name %>"><br>
+        <label for="lname">Last name:</label><br>
+        <input class="form-control" type="text" id="lname" name="lname" value="<%= student.last_name %>"><br><br>
+    
+        <label for="kelas">Class:</label>
+        <select class="form-select" name="kelas" id="kelas">
+          <option value="10-IPA">10-IPA</option>
+          <option value="10-IPS">10-IPS</option>
+          <option value="11-IPA">11-IPA</option>
+          <option value="11-IPS">11-IPS</option>
+        </select><br><br>
+    
+        <label for="tipe">Class Music:</label>
+        <select class="form-select" name="tipe" id="tipe">
+          <% instrument.forEach(el => {%>
+          <option value="<%= el.id %>"><%=el.tipe%></option>
+          <% }) %>
+        </select><br><br>
+    
+        <label for="radio">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" <%= student.gender === 'male' ? 'checked' : '' %> >
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female" <%= student.gender === 'female' ? 'checked' : '' %> >
+        <label for="female">Female</label><br><br>
+    
+        <button class="btn btn-success" type="submit">Update Student</button>
+        <button class="btn btn-secondry" type="submit"><a href="/admin/student">Cancel</a></button>
+    </div>
+    <div class="col-sm"></div>
+  </div>
+  
   </form>
 </body>
 </html>

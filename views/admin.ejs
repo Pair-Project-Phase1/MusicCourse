@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdminPage</title>
-</head>
+<%- include('header-part') %>
+<%- include('navbarIsLogin') %>
+
 <body>
-  <h1>Admin Page</h1>
 
-  <button><a href="/admin/student">STUDENT</a></button>
-  <button>MUSIC COURSE</button>
-  <button>INSTRUMENT</button>
+  <div style="text-align: center; margin-top: 5%;">
+    <h1>Admin Page</h1><br>
 
+    <button class="btn btn-secondary"><a href="/admin/student" style="color: aliceblue;">STUDENT</a></button>
+    <button class="btn btn-secondary"><a href="/" style="color: whitesmoke;">INSTRUMENT</a></button>
+</div>
 </body>
 </html>

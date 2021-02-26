@@ -1,44 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Students data</title>
-</head>
-
+<%- include('header-part') %>
+<%- include('navbarIsLogin') %>
 
 
 <body>
-  <h1>
+  <h1 style="text-align: center; margin-top: 5%;">
     Students data
-  </h1>
-  <h3><a href="/admin/student/add">Add Data</a></h3>
-  <table border="1">
-    <thead>
-      <tr>
-        <th> No. </th>
-        <th> First Name</th>
-        <th> Last Name</th>
-        <th> Gender </th>
-        <th> Class </th>
-        <th> Action </th>
-      </tr>
-    </thead>
+  </h1><br><br>
+  <h6 style="text-align: center;"><a href="/admin/student/add">Add Data</a></h6>
 
-    <tbody>
-      <% data.forEach((el, index) => { %>
-      <tr>
-        <td><%= index + 1 %></td>
-        <td><%= el.first_name %></td>
-        <td><%= el.last_name %></td>
-        <td><%= el.gender %></td>
-        <td><%= (!el.Instruments[0]) ?  '' : el.Instruments[0].tipe %></td>
-        <td><a href="/admin/student/edit/<%= el.id %>">Edit</a> | 
-          <a onclick="return confirm(`Are you sure delete this??`)" href="/admin/student/delete/<%= el.id%>">Delete</a></td>
-      </tr>
-      <% }) %>
-    </tbody>
+  <div class="row">
+    <div class="col-6 col-md-4"></div>
+    <div class="col-6 col-md-4">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th> No. </th>
+            <th> First Name</th>
+            <th> Last Name</th>
+            <th> Gender </th>
+            <th> Class </th>
+            <th> Action </th>
+          </tr>
+        </thead>
+    
+        <tbody>
+          <% data.forEach((el, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= el.first_name %></td>
+            <td><%= el.last_name %></td>
+            <td><%= el.gender %></td>
+            <td><%= (!el.Instruments[0]) ?  '' : el.Instruments[0].tipe %></td>
+            <td><a href="/admin/student/edit/<%= el.id %>">Edit</a> | 
+              <a onclick="return confirm(`Are you sure delete this??`)" href="/admin/student/delete/<%= el.id%>">Delete</a></td>
+          </tr>
+          <% }) %>
+        </tbody>
+    </div>
+    <div class="col-6 col-md-4"></div>
+  </div>
+
 
   </table>
 
