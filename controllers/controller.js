@@ -31,7 +31,7 @@ class Controller {
       }
     })
     .catch(error=>{
-      res.send(error)
+      res.send("You are not admin")
     })
   }
 
